@@ -1,2 +1,10 @@
-<h1>Subs#index</h1>
-<p>Find me in app/views/subs/index.html.erb</p>
+<h1>All Subs</h1>
+<ul>
+  <% @subs.each do |topic| %>
+  <li>
+    <a href="<%= sub_url(topic.id) %>">
+    <%= "#{topic.title} - #{topic.description}" %>
+    </a>
+  </li>
+  <% end %>
+</ul>

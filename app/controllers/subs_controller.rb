@@ -6,12 +6,15 @@ class SubsController < ApplicationController
   end
 
   def index
+    @subs = Sub.all
   end
 
   def show
+    @sub = Sub.find(params[:id])
   end
 
   def edit
+    @sub = Sub.find(params[:id])
   end
 
   def create
@@ -20,7 +23,7 @@ class SubsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
   def redirect_unless_moderator

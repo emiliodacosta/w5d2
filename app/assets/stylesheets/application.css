@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.right-nav {
+  position: absolute;
+  right: 10px;
+}

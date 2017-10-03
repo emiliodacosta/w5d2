@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
+    redirect_to subs_urls
   end
 
 end
