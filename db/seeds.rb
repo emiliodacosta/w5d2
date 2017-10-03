@@ -17,35 +17,29 @@ s2 = Sub.create!(title: "Parrots", description: "kaw kaw", moderator_id: u2.id)
 p1 = Post.create!(title: "Awesome Cars",
   url: "http://kbb.com",
   content: "This site helps you buy cars smartly with smartness.",
-  sub_id: s1.id,
   author_id: u1.id
 )
 
 p2 = Post.create!(title: "Cars are Lame",
   url: "http://planetearth.com",
   content: "Trees > Cars",
-  sub_id: s1.id,
   author_id: u2.id
 )
 
 p3 = Post.create!(title: "Why do Parrots Talk",
   url: "http://about.com",
   content: "I don't know why they do it but how come",
-  sub_id: s2.id,
   author_id: u2.id
 )
 
 p4 = Post.create!(title: "Who cares about parrots. Get a car bro.",
   url: "http://ford.com",
   content: "Built ford tough. Sucka.",
-  sub_id: s2.id,
   author_id: u1.id
 )
 
 p5 = Post.create!(title: "It's getting hostile in here guys. Let's chill out and eat parrots in cars.",
   url: "http://compromise.com",
   content: "Let's all be friendsss except the parrotfood",
-  sub_id: s2.id,
   author_id: u3.id
 )
-  

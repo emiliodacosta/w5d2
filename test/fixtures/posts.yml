@@ -6,7 +6,6 @@
 #  title      :string
 #  url        :string
 #  content    :string
-#  sub_id     :integer
 #  author_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
