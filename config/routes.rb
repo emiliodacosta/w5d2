@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :session
 
   resources :subs do
-    resources :posts, only: [:new, :create, :show, :index]
+    resources :posts, only: [:new, :create, :show]
   end
 
   resources :posts, only: [:destroy, :edit, :update]
