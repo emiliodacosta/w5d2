@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= flash[:errors] %>
     <div class="right-nav">
     <% if logged_in? %>
       <form class="" action="<%= session_url %>" method="post">
