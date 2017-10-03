@@ -6,10 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-  end
-
-  def edit
-    @post = Post.find(params[:id])
+    @sub_id = params[:sub_id]
   end
 
   def create
@@ -21,6 +18,10 @@ class PostsController < ApplicationController
       flash[:errors] = @post.errors.full_messages
       render :new
     end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -63,4 +64,5 @@ class PostsController < ApplicationController
       redirect_to sub_url(@post.sub)
       flash[:errors] = ["Hey you can't do that, man."]
     end
+  end
 end

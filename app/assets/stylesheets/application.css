@@ -18,3 +18,12 @@
   position: absolute;
   right: 10px;
 }
+
+.embiggen {
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.moderated {
+  margin-left: 50px;
+}

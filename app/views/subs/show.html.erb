@@ -1,15 +1,42 @@
-<h3>  <a href="<%= subs_url %>">Back To All Subs</a> </h3>
+<h5>  <a href="<%= subs_url %>">Back To All Subs</a> </h5>
 
-<h1><%= @sub.title %></h1>
 
-<h3><%= @sub.description %></h3>
+<table>
+  <tr>
+    <td>
+      <h1><span class="embiggen"><%= @sub.title %></span>: <%= @sub.description %></h1>
+      <h4 class="moderated">Moderated by: <%= @sub.moderator.username %></h4>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="<%= edit_sub_url(@sub) %>">Edit Sub</a>
+    </td>
+    <td>
+      <form class="" action="<%= sub_url(@sub) %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" name="" value="Delete Sub">
+      </form>
+    </td>
+  </tr>
+</table>
 
-<h4>Moderated by: <%= @sub.moderator.username %></h4>
-
-<a href="<%= edit_sub_url(@sub) %>">Edit</a>
-
-<form class="" action="<%= sub_url(@sub) %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" name="" value="Delete">
-</form>
+<div>
+  <% @posts.each do |post| %>
+  <ul class="reddit-post">
+    <li>
+      <a href="<%= post.url %>"><%= post.title %></a>
+    </li>
+    <li>
+      <%= post.content %>
+    </li>
+    <li>
+      author: <%= post.author.username %>
+    </li>
+    <li>
+      <a href="<%= sub_post_url(post.sub.id, post.id) %>">show post/comments</a>
+    </li>
+  </ul>
+  <% end %>
+</div>
