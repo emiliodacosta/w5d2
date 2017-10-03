@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003150321) do
+ActiveRecord::Schema.define(version: 20171003160426) do
+
+  create_table "subs", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "moderator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
